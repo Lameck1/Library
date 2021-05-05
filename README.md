@@ -11,7 +11,7 @@
 
 ## About Project
 
-My Library is a mini book library project tha allows a user to add books, remove a book and track read status of a given book. The project works with ```localStoraage``` for its backend.
+My Library is a mini book library project tha allows a user to add books, remove a book and track read status of a given book. The project works with ```localStorage``` for its backend.
 
 ![screenshot](./screenshot.png)
 
@@ -52,7 +52,7 @@ Feel free to check the [issues page](https://github.com/Lameck1/Library/issues)
 * GitHub: [@githubhandle](https://github.com/Lameck1)
 * Twitter: [@twitterhandle](https://twitter.com/lameck721)
 * LinkedIn: [LinkedIn](https://www.linkedin.com/in/lameck-odhiambo-642b7077/)
-* Portfolio: [Portfolio](https://lameck.me)/
+* Portfolio: [Portfolio](https://lameck.me)
 
 ## Acknowledgements
 
