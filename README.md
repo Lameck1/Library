@@ -1,72 +1,66 @@
-# JavaScript
+# My Library
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+## Table of Contents
 
-## Set-up GitHub Actions
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [Contributing](#contributing)
+* [Author](#author)
+* [Acknowledgements](#acknowledgements)
 
-This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+## About Project
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+My Library is a mini book library project tha allows a user to add books, remove a book and track read status of a given book. The project works with ```localStorage``` for its backend.
 
-[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+![screenshot](./screenshot.png)
 
-Please do the following **steps in this order**:
+## [Live Demo](https://lameck1.github.io/Library/)
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+## Built With
 
-![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
+* HTML5
+* CSS
+* Javascript
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+## Getting Started
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
+* Clone this repo <https://github.com/Lameck1/Library>
 
-## Set-up linters in your local env
+    ```bash
+    git clone https://github.com/Lameck1/Library.git
+    ```
 
-**Note**: The `npm` package manager is going to create a `node_modules` directory to install all of your dependencies. You shouldn't commit that directory. To avoid that, you can create a [`.gitignore`](https://git-scm.com/docs/gitignore) file and add `node_modules` to it:
+* Navigate to Library folder/directory
 
-```
-# .gitignore
-node_modules/
-```
+    ```bash
+    cd Library
+    ```
 
-### ESLint
+* Open the index.html file in the directory to interact with the project
 
-1. Run `npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x` (not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
-2. Copy [.eslintrc.json](./.eslintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint .` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+## Contributing
 
-### Stylelint
+Contributions, issues, and feature requests are welcome!
 
-1. Run
+Feel free to check the [issues page](https://github.com/Lameck1/Library/issues)
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+## Author
 
-   (not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
+👤 **Lameck Otieno**
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run
-   ```
-   npx stylelint "**/*.{css,scss}"
-   ```
-   on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+* GitHub: [@githubhandle](https://github.com/Lameck1)
+* Twitter: [@twitterhandle](https://twitter.com/lameck721)
+* LinkedIn: [LinkedIn](https://www.linkedin.com/in/lameck-odhiambo-642b7077/)
+* Portfolio: [Portfolio](https://lameck.me)
 
-## Test/Deployment Actions
+## Acknowledgements
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+Credits go to the following for providing guides on JavaScript
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+* [**MDN Web Docs**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects)
+* [Freecodecamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
