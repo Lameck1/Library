@@ -36,6 +36,12 @@ function statusToString(status) {
 }
 
 // User Interface
+document.querySelector('#new-book').addEventListener('click', () => {
+  document.querySelector('form').classList.toggle('active');
+  document.querySelector('#new-book').classList.remove('active');
+  document.querySelector('#new-book').classList.add('in-active');
+});
+
 function showAlert(message, className) {
   if (document.querySelector('.alert')) {
     document.querySelector('.alert').remove();
@@ -47,9 +53,9 @@ function showAlert(message, className) {
   closeBtn.className = 'close-btn';
   closeBtn.textContent = 'X';
   div.appendChild(closeBtn);
-  const container = document.querySelector('.form-container');
-  const form = document.querySelector('form');
-  container.insertBefore(div, form);
+  const container = document.querySelector('.container');
+  const formContainer = document.querySelector('.form-container');
+  container.insertBefore(div, formContainer);
 
   closeBtn.addEventListener('click', () => {
     document.querySelector('.alert').remove();
@@ -76,7 +82,7 @@ function addBookToTable(book) {
 
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Remove Book';
-  removeBtn.setAttribute('data-attribute', getBooks().indexOf(book).toString());
+  removeBtn.setAttribute('data-attribute', books.indexOf(book).toString());
   removeBtn.setAttribute('id', 'delete-btn');
 
   removeBtn.addEventListener('click', () => {
@@ -139,5 +145,8 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     addBook(book);
     showAlert('Book Added', 'success');
     clearFields();
+    document.querySelector('#book-form').classList.toggle('active');
+    document.querySelector('#new-book').classList.remove('in-active');
+    document.querySelector('#new-book').classList.add('active');
   }
 });
