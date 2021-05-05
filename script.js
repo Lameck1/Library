@@ -6,12 +6,10 @@ function Book(title, author, pages, isbn, status) {
   this.status = status;
 }
 
-function toggleStatus(book) {
-  book.status = !book.status;
-}
+const toggleStatus = (book) => { book.status = !book.status; };
 
 // Storage
-function getBooks() {
+const getBooks = () => {
   let books;
   if (localStorage.getItem('books') === null) {
     books = [];
@@ -19,21 +17,21 @@ function getBooks() {
     books = JSON.parse(localStorage.getItem('books'));
   }
   return books;
-}
+};
 
 const books = getBooks();
 
-function addBook(book) {
+const addBook = (book) => {
   books.push(book);
   localStorage.setItem('books', JSON.stringify(books));
-}
+};
 
-function statusToString(status) {
+const statusToString = (status) => {
   if (status) {
     return 'Read';
   }
   return 'Unread';
-}
+};
 
 // User Interface
 document.querySelector('#new-book').addEventListener('click', () => {
@@ -42,7 +40,7 @@ document.querySelector('#new-book').addEventListener('click', () => {
   document.querySelector('#new-book').classList.add('in-active');
 });
 
-function showAlert(message, className) {
+const showAlert = (message, className) => {
   if (document.querySelector('.alert')) {
     document.querySelector('.alert').remove();
   }
@@ -60,16 +58,16 @@ function showAlert(message, className) {
   closeBtn.addEventListener('click', () => {
     document.querySelector('.alert').remove();
   });
-}
+};
 
-function removeBook(delButton) {
+const removeBook = (delButton) => {
   books.splice(Number(delButton.getAttribute('data-attribute')), 1);
   localStorage.setItem('books', JSON.stringify(books));
   delButton.parentElement.parentElement.remove();
   showAlert('Book Removed', 'success');
-}
+};
 
-function addBookToTable(book) {
+const addBookToTable = (book) => {
   const tableBody = document.querySelector('#book-list');
   const row = document.createElement('tr');
 
@@ -112,19 +110,19 @@ function addBookToTable(book) {
   row.appendChild(readTd);
   row.appendChild(removeTd);
   tableBody.appendChild(row);
-}
+};
 
-function displayBooks() {
+const displayBooks = () => {
   books.forEach((book) => addBookToTable(book));
-}
+};
 
-function clearFields() {
+const clearFields = () => {
   document.querySelector('#title').value = '';
   document.querySelector('#author').value = '';
   document.querySelector('#pages').value = '';
   document.querySelector('#isbn').value = '';
   document.querySelector('#status').checked = false;
-}
+};
 
 document.addEventListener('DOMContentLoaded', displayBooks);
 
