@@ -1,20 +1,17 @@
-function Book(title, author, pages, isbn, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isbn = isbn;
-  this.status = status;
-}
+// factory function
+const Book = (title, author, pages, isbn, status) => ({
+  title, author, pages, isbn, status,
+});
 
 const toggleStatus = (book) => { book.status = !book.status; };
 
 // Storage
 const getBooks = () => {
   let books;
-  if (localStorage.getItem('books') === null) {
+  if (window.localStorage.getItem('books') === null) {
     books = [];
   } else {
-    books = JSON.parse(localStorage.getItem('books'));
+    books = JSON.parse(window.localStorage.getItem('books'));
   }
   return books;
 };
@@ -138,9 +135,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   if (title === '' || author === '' || pages === '' || isbn === '') {
     showAlert('Please fill in all fields', 'danger');
   } else {
-    const book = new Book(title, author, pages, isbn, status);
-    addBookToTable(book);
+    const book = Book(title, author, pages, isbn, status);
     addBook(book);
+    addBookToTable(book);
     showAlert('Book Added', 'success');
     clearFields();
     document.querySelector('#book-form').classList.toggle('active');
